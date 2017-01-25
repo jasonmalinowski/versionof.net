@@ -1,25 +1,108 @@
 <html>
 <head>
-<title>versionof.net</title>
+  <title>versionof.net</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /* Icon when the collapsible content is shown */
+  .expandableButton:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e114";
+    float: right;
+    margin-left: 5px;
+  }
+  /* Icon when the collapsible content is hidden */
+  .expandableButton.collapsed:after {
+    content: "\e080";
+  }
+
+  .btn-info {
+    width: 100px;	
+	text-align: left;
+    padding-right: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+    padding-left: 5px;
+	margin-right: 0px;
+	margin-top: 1px;
+	margin-bottom: 0px;
+    margin-left: 0px;
+    background-color: #68217A;
+	border-color: #68217A;
+  }
+  
+  .btn-info:hover {
+    background-color: #68217A;
+	border-color: #68217A;
+  }
+  
+  .btn-info:focus {
+    background-color: #68217A;
+	border-color: #68217A;
+  }
+  
+  .btn-info:selected {
+    background-color: #68217A;
+	border-color: #68217A;
+  }
+  
+  .details {
+    padding-left: 25px;
+  }
+  
+  .date {
+    font-weight: bold;
+	display: inline-block;
+	width: 85px;
+	margin-left: 5px;
+  }
+  
+  .version {
+	font-style: italic;
+	display: inline-block;
+	width: 150px;
+  }
+  </style>
 </head>
 
 <body>
-	
-<h2>Visual Studio 2017 (codenamed "15")</h2>
+<h2>Visual Studio 2017</h2>
 <ul>
-    <li><b>RC</b> (11/16/2016) - 15.0.25909.02 d15rel</li>
-    <li><b>Preview 5</b> (10/05/2016) - 15.0.25802.00 preview</li>
-    <li><b>Preview 4</b> (8/22/2016) - 15.0.25618.00 Preview
-        <span title="Visual-Studio-15-Preview-4 / eb964d42c8f8e763e4379f1e33c3cf5547692a3f / Roslyn-Signed\dev15-preview4-df\Release\20160808.3">[Roslyn Tag/SHA/Build]</span>
-    </li>
-    <li><b>Preview 3</b> (7/7/2016) - 15.0.25428.01 Preview
-        <span title="&lt;server&gt;\drops\vs\preview\layouts\x86ret\25428.01\enu\vs\enterprise\dvd\vs_enterprise.exe">[Installer Server Path]</span>
-    </li>
-    <li><b>Preview 2</b> (5/10/2016) - 15.0.25302.00 Preview</li>
     <li>
-        <b>Preview</b> (3/30/2016) - 15.0.25123.00 Preview
-        <span title="&lt;server&gt;\drops\vs\preview\layouts\x86ret\25123.00\enu\vs\enterprise\dvd\vs_enterprise.exe">[Installer Server Path]</span>
-        <span title="Visual-Studio-15-Preview / af0922bd496d60403886cc5c32997adced7da7d7 / Roslyn-Future-Stabilization-Signed-Release_20160317.3">[Roslyn Tag/SHA/Build]</span>
+		<button type="button" class="btn-info">RC.2</button>
+	</li>
+    <li>
+		<button type="button" class="btn-info">RC</button> <span class="date">(11/16/2016)</span> - <span class="version">15.0.25909.02 d15rel</span>
+	</li>
+    <li>
+		<button type="button" class="btn-info">Preview 5</button> <span class="date">(10/05/2016)</span> - <span class="version">15.0.25802.00 Preview</span>
+	</li>
+    <li>
+		<button type="button" class="expandableButton btn-info collapsed" data-toggle="collapse" data-target="#d15preview4">Preview 4</button> <span class="date">(8/22/2016)</span> - <span class="version">15.0.25618.00 Preview</span> [Roslyn Info]
+		<div id="d15preview4" class="details collapse">
+			<b>Roslyn Tag:</b> Visual-Studio-15-Preview-4<br />
+			<b>Roslyn SHA:</b> eb964d42c8f8e763e4379f1e33c3cf5547692a3f<br />
+			<b>Roslyn Build:</b> Roslyn-Signed\dev15-preview4-df\Release\20160808.3
+		</div>
+    </li>
+    <li>
+		<button type="button" class="expandableButton btn-info collapsed" data-toggle="collapse" data-target="#d15preview3">Preview 3</button> <span class="date">(7/7/2016)</span> - <span class="version">15.0.25428.01 Preview</span> [Installer Path]
+		<div id="d15preview3" class="details collapse">
+			<b>Installer Path:</b> &lt;server&gt;\drops\vs\preview\layouts\x86ret\25428.01\enu\vs\enterprise\dvd\vs_enterprise.exe
+		</div>
+	</li>
+    <li>
+		<button type="button" class="btn-info">Preview 2</button> <span class="date">(5/10/2016)</span> - <span class="version">15.0.25302.00 Preview</span>
+	</li>
+    <li>
+		<button type="button" class="expandableButton btn-info collapsed" data-toggle="collapse" data-target="#d15preview">Preview</button> <span class="date">(3/30/2016)</span> - <span class="version">15.0.25123.00 Preview</span> [Installer Path] [Roslyn Info]
+		<div id="d15preview" class="details collapse">
+			<b>Installer Path:</b> &lt;server&gt;\drops\vs\preview\layouts\x86ret\25123.00\enu\vs\enterprise\dvd\vs_enterprise.exe<br />
+			<b>Roslyn Tag:</b> Visual-Studio-15-Preview<br />
+			<b>Roslyn SHA:</b> af0922bd496d60403886cc5c32997adced7da7d7<br />
+			<b>Roslyn Build:</b> Roslyn-Future-Stabilization-Signed-Release_20160317.3
+		</div>		
     </li>
 </ul>
 

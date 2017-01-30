@@ -18,7 +18,7 @@
   }
 
   .btn-info {
-    width: 100px;	
+    width: 120px;	
 	text-align: left;
     padding-right: 5px;
 	padding-top: 0px;
@@ -70,10 +70,23 @@
 <h2>Visual Studio 2017</h2>
 <ul>
     <li>
-		<button type="button" class="btn-info">RC.2</button>
+		<button type="button" class="btn-info">RC.3</button> <span class="date">(1/27/2017)</span> - <span class="version">15.0.0-RC.3+26127.0</span>
+	</li>
+<!--
+	<li>
+		<button type="button" class="btn-info">RC.3 (recalled)</button> <span class="date">(1/26/2017)</span>
+	</li>
+ -->
+	<li>
+		<button type="button" class="btn-info">RC.2</button> <span class="date">(12/12/2016)</span>
 	</li>
     <li>
-		<button type="button" class="btn-info">RC</button> <span class="date">(11/16/2016)</span> - <span class="version">15.0.25909.02 d15rel</span>
+		<button type="button" class="expandableButton btn-info collapsed" data-toggle="collapse" data-target="#d15rc">RC</button> <span class="date">(11/16/2016)</span> - <span class="version">15.0.25909.02 d15rel</span> [Roslyn Info]
+		<div id="d15rc" class="details collapse">
+			<b><a href="https://github.com/dotnet/roslyn/releases/tag/Visual-Studio-2017-RC" target="_blank">Roslyn Tag</a>:</b> Visual-Studio-2017-RC<br />
+			<b>Roslyn SHA:</b> 5bfc051d4e24768be0e9f515b57e14375fb3b4e5<br />
+			<b>Roslyn Build:</b> Roslyn-Signed_20161104.10
+		</div>
 	</li>
     <li>
 		<button type="button" class="btn-info">Preview 5</button> <span class="date">(10/05/2016)</span> - <span class="version">15.0.25802.00 Preview</span>

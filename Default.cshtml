@@ -1,5 +1,7 @@
 ﻿@{
     Layout = null;
+
+    var document = System.Xml.Linq.XDocument.Load(Server.MapPath("~/VersionData.xml"));
 }
 
 <html>
@@ -71,16 +73,37 @@
 </head>
 
 <body>
-    <h2>Visual Studio 2017</h2>
+    @foreach (var majorRelease in document.Element("versionData").Elements("majorRelease"))
+    {
+        <h2>@majorRelease.Attribute("name").Value</h2>
+        <ul>
+            @foreach (var minorRelease in majorRelease.Elements("minorRelease"))
+            {
+                var collapsableTagId = (majorRelease.Attribute("name").Value + minorRelease.Attribute("name").Value).Replace(" ", "").Replace(".", "").ToLower();
+                <li>
+                    <button type="button" class="expandableButton btn-info collapsed" data-toggle="collapse" data-target="#@collapsableTagId">@minorRelease.Attribute("name").Value</button>
+                    <span class="date">(@minorRelease.Attribute("date").Value)</span> - <span class="version">@minorRelease.Attribute("aboutHelpVersion").Value</span>
+                    <div id="@collapsableTagId" class="details collapse">
+                        @{ var roslynInfo = minorRelease.Element("roslyn"); }
+
+                        @if (roslynInfo != null)
+                        {
+                            var roslynTag = roslynInfo.Element("git").Attribute("tag").Value;
+                            var roslynSha = roslynInfo.Element("git").Attribute("sha1").Value;
+
+                            <div>
+                                <b>Roslyn Tag:</b> <a href="https://github.com/dotnet/roslyn/releases/tag/@roslynTag">@roslynTag</a><br />
+                                <b>Roslyn SHA:</b> <a href="https://github.com/dotnet/roslyn/commit/@roslynSha">@roslynSha</a><br />
+                                <b>Roslyn Build:</b> @roslynInfo.Element("build").Attribute("fullNumber").Value from @roslynInfo.Element("build").Attribute("branch").Value
+                            </div>
+                        }
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+
     <ul>
-        <li>
-            <button type="button" class="btn-info">RC.3</button> <span class="date">(1/27/2017)</span> - <span class="version">15.0.0-RC.3+26127.0</span>
-        </li>
-        <!--
-            <li>
-                <button type="button" class="btn-info">RC.3 (recalled)</button> <span class="date">(1/26/2017)</span>
-            </li>
-         -->
         <li>
             <button type="button" class="btn-info">RC.2</button> <span class="date">(12/12/2016)</span>
         </li>

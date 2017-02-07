@@ -1,0 +1,31 @@
+﻿<versionData>
+  <majorRelease name="Visual Studio 2017">
+    <minorRelease name="RC.3" date="1/27/2017" aboutHelpVersion="15.0.0-RC.3+26127.0" branch="rel/d15rel" version="26127.00">
+      <roslyn>
+        <git sha1="b7d3e5b3527463259f9c5ac5817b3461200aff34" tag="Visual-Studio-2017-RC3" />
+        <build branch="dev15-rc3" fullNumber="20170124.1" />
+      </roslyn>
+    </minorRelease>
+    
+    <minorRelease name="RC.2.1" date="12/12/2016" aboutHelpVersion="?" branch="rel/d15rel" version="26009.00">
+      <roslyn>
+        <git sha1="3b369f41d440eb3fca98859b1ecd2678cd0331c1" tag="Visual-Studio-2017-RC2.1" />
+        <build branch="dev15-rc2" fullNumber="20161213.5" />
+      </roslyn>
+    </minorRelease>
+    
+    <minorRelease name="RC.2" date="12/12/2016" aboutHelpVersion="?" branch="rel/d15rel" version="26009.00">
+      <roslyn>
+        <git sha1="743ce3b653a60f9ac3efe4a83a41d61bdb4f463c" tag="Visual-Studio-2017-RC2" />
+        <build branch="dev15-rc2" fullNumber="20161205.4" />
+      </roslyn>
+    </minorRelease>
+  
+    <minorRelease name="RC1.0.1" date="11/16/2016" aboutHelpVersion="?" branch="rel/d15rel" version="25914.00">
+      <roslyn>
+        <git sha1="5bfc051d4e24768be0e9f515b57e14375fb3b4e5" tag="Visual-Studio-2017-RC" />
+        <build branch="dev15-rc" fullNumber="20161104.10" />
+      </roslyn>
+    </minorRelease>
+  </majorRelease>
+</versionData>

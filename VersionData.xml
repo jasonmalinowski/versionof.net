@@ -1,5 +1,12 @@
 ﻿<versionData>
   <majorRelease name="Visual Studio 2017">
+    <minorRelease name="RC.4" date="2/7/2017" aboutHelpVersion="15.0.0-RC.4+26206.0.d15rel" branch="rel/d15rel" version="26206.00">
+      <roslyn>
+        <git sha1="53f2a8744e08c70cd42e38e3d5571a957ddaaf69" tag="Visual-Studio-2017-RC4" />
+        <build branch="master" fullNumber="20170204.7" />
+      </roslyn>
+    </minorRelease>
+    
     <minorRelease name="RC.3" date="1/27/2017" aboutHelpVersion="15.0.0-RC.3+26127.0" branch="rel/d15rel" version="26127.00">
       <roslyn>
         <git sha1="b7d3e5b3527463259f9c5ac5817b3461200aff34" tag="Visual-Studio-2017-RC3" />
